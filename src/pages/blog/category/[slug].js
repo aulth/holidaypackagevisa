@@ -1,8 +1,8 @@
-import Category from 'components/blog/category/Category'
-import Navbar from 'components/blog/Navbar'
+import Category from '@/components/blog/category/Category'
+import Navbar from '@/components/blog/Navbar'
+import Footer from '@/components/blog/Footer'
 import React from 'react'
 import Head from 'next/head'
-import Footer from 'components/blog/Footer'
 const CategoryPage = ({ data, category }) => {
 
   const descData = {'story':'Discover captivating tales from various genres on our story category blog page. Get ready to be transported to different worlds and be swept away by the power of storytelling.',
