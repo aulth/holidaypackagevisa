@@ -46,3 +46,16 @@ body{
             list-style-type: decimal;
             padding-left: 2rem;
           }
+          pre {
+            background-color: #282c34;
+            border: 1px solid #555;
+            border-radius: 4px;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 1em 0;
+            padding: 1em;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            color: #fff;
+          }

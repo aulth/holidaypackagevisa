@@ -4,7 +4,7 @@ import Link from 'next/link';
 const YouMightLike = ({ category }) => {
     const [data, setData] = useState();
     const fetchData = async () => {
-        const response = await fetch('/api/blog/fetchcategory', {
+        const response = await fetch(process.env.NODE_ENV == 'production' ? 'https://mohd-usman.vercel.app/api/blog/fetchcategory' : 'http://localhost:3000/api/blog/fetchcategory', {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
@@ -12,7 +12,6 @@ const YouMightLike = ({ category }) => {
             body: JSON.stringify({ category: category })
         })
         var json = await response.json();
-        console.log(json)
         if(json.success){
             json = json.article;
             json?.sort((a, b) => b.views - a.views);
@@ -49,7 +48,7 @@ const YouMightLike = ({ category }) => {
             <div className="w-full rounded-lg p-4 ">
                 <div className="w-full flex justify-between">
                     <h2 className="font-bold">You Might Like</h2>
-                    <Link href={`/blog/category/${category}`} className="flex items-center text-red-500">View all <IoIosArrowRoundForward className='mt-1' /></Link>
+                    <Link href={`/blog/category/${category}`} className="flex items-center text-cyan-500">View all <IoIosArrowRoundForward className='mt-1' /></Link>
                 </div>
                 <div className="w-full overflow-x-scroll overflow-y-hidden flex gap-4 mt-4 you-might-like ">
                     {
@@ -58,7 +57,7 @@ const YouMightLike = ({ category }) => {
                             return <div key={index} className='w-64 shrink-0'>
                             <img src={data.cover} className='w-full aspect-[10/7] object-cover rounded-lg' alt="" />
                             <div className="w-full mt-1">
-                                <Link href={`/blog/${data.link}`}><h2 className="font-bold">{data.title.slice(0, 57)}{data.title.length>57?"..":""}</h2></Link>
+                                <Link href={`/blog/article/${data.link}`}><h2 className="font-bold">{data.title.slice(0, 57)}{data.title.length>57?"..":""}</h2></Link>
                                 <span className='text-sm'>{getFormattedDate(data.createdAt)}</span>
                             </div>
                         </div>

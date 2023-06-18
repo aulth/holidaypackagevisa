@@ -43,7 +43,7 @@ const Admin = ({ data }) => {
     return (
         <>
             <Toaster position='top-right' />
-            <div className="container m-auto  relative">
+            <div className="container m-auto px-4 py-4 md:px-12  relative">
                 {
                     !authorized &&
                     <form onSubmit={verifyAdmin} className="m-auto w-full md:w-80 flex flex-col gap-4 p-4">
@@ -54,7 +54,7 @@ const Admin = ({ data }) => {
                 }
                 {
                     authorized &&
-                    <div className='flex overflow-y-auto md:h-screen h-[calc(100vh-56px)] md:mt-0 mt-[56px]  flex-col'>
+                    <div className='flex   flex-col   gap-4'>
                         {
                             articleData && articleData.length > 0 &&
                             articleData.map((article, index) => {
