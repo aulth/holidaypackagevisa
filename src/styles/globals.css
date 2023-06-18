@@ -1,27 +1,48 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300&display=swap');
+*{
+scroll-behavior:smooth;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
 }
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+.MuiButton-containedPrimary{
+background:#1976d2;
 }
-
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+.merriweather{
+  font-family: 'Merriweather', serif;
 }
+body{
+  font-family: 'Merriweather', serif;
+    overflow-x:hidden;}
+    pre {
+            background-color: #282c34;
+            border: 1px solid #555;
+            border-radius: 4px;
+            font-family: Menlo, Monaco, Consolas, "Courier New", monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            margin: 1em 0;
+            padding: 1em;
+            overflow-x: auto;
+            white-space: pre-wrap;
+            color: #fff;
+          }
+          .article-body h1 {
+            font-size: 1.5rem;
+            font-weight: bold;
+          }
+          
+          .article-body h2 {
+            font-size: 1.25rem;
+            font-weight: bold;
+          }
+          .article-body ul {
+            list-style-type: disc;
+            padding-left: 2rem;
+          }
+          
+          .article-body ol {
+            list-style-type: decimal;
+            padding-left: 2rem;
+          }
